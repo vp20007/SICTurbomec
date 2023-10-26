@@ -1,3 +1,6 @@
+dijango==3.7.0
 pillow==8.2.0
+django-environment==0.4.5
 django-tailwind==2.2.0
 whitenoise==5.2.0
+gunicorn==20.1.0
