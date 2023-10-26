@@ -4,7 +4,6 @@
 
 {% block contenido %}
 
-
 <div class="container">
     <div class="jumbotron">
         <center><h1 class="display-6"> Contabilidad de costos </h1></center>
@@ -13,8 +12,8 @@
 
         <div class="row align-items-center justify-content-center">
             <div class="col-md-5 ">
-                <div class="card text-white bg-dark text-center" style="max-width: 18rem;">
-                    <div class="card-header">
+                <div class="card text-dark bg-light text-center" style="max-width: 18rem;">
+                    <div class="card-header text-white bg-dark">
                         <h5 class="card-title">Orden de Produccion</h5>
                     </div>
                     <div class="card-body">
@@ -24,15 +23,15 @@
                         </p>
                         <br>
                         <p class="lead">
-                            <a class="btn btn-light btn-lg" href="{% url 'OrdenProduccion' %}" role="button">Empezar</a>
+                            <a class="btn btn-primary btn-lg" href="{% url 'OrdenProduccion' %}" role="button">Empezar</a>
                         </p>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-4 ">
-                <div class="card text-dark bg-white text-center" style="max-width: 18rem;">
-                    <div class="card-header">
+                <div class="card text-dark bg-light text-center" style="max-width: 18rem;">
+                    <div class="card-header  text-white bg-dark">
                         <h5 class="card-title">Contabilidad de costos</h5>
                     </div>
                     <div class="card-body">
@@ -42,7 +41,7 @@
                         </p>
                         <br>
                         <p class="lead">
-                            <a class="btn btn-dark btn-lg" href="{% url 'verOrdenes' %}" role="button">Empezar</a>
+                            <a class="btn btn-primary btn-lg" href="{% url 'verOrdenes' %}" role="button">Empezar</a>
                         </p>
                     </div>
                 </div>
@@ -50,4 +49,10 @@
         </div>
     </div>
 </div>
+
+<style>
+    body {
+        background-color: rgb(151, 151, 151); /* Cambia el color de fondo de toda la página */
+    }
+</style>
 {%endblock %}
