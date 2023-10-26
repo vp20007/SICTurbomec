@@ -756,7 +756,6 @@ def ProrrateoVista(request,id_OrdendeProduccion):
         prorrateo = formulario.save(commit=False)
         prorrateo.id_OrdendeProduccion=orden
         prorrateo.totalCIF = prorrateo.manodeObraIndirecta+\
-                          prorrateo.alquiler+\
                           prorrateo.segurosEquipo+\
                           prorrateo.depreciacion+\
                           prorrateo.energia+\
