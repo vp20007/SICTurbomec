@@ -817,8 +817,8 @@ def verFactura(request, id_OrdendeProduccion):
     ordenes = OrdendeProduccion.objects.get(id_OrdendeProduccion=id_OrdendeProduccion)
     obras = ManodeObra.objects.filter(id_OrdendeProduccion=id_OrdendeProduccion)
     costos = CostosIndirectos.objects.filter(id_OrdendeProduccion=id_OrdendeProduccion)
-
-    multi = ordenes.producto_Orden.precio_Producto * ordenes.cantidad_Producto
+    multi = ordenes.precio_MateriaPrima
+  
     for obrasfor in obras:
         suma = Decimal(obrasfor.costo) + Decimal(multi)
 

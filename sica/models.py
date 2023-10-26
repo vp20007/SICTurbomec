@@ -133,14 +133,14 @@ class Transaccion(models.Model):
 class Producto(models.Model):
     id_Producto = models.AutoField(primary_key=True, null=False, blank=False)
     nombre_Producto = models.CharField("Nombre",max_length=50, null=False, blank=False)
-    precio_Producto = models.FloatField("Precio", null=False, blank=False)
+    precio_Producto = models.FloatField("Precio", null=True, blank=True)
 
     class Meta:
         db_table ='Producto'
         ordering = ["id_Producto"]
 
     def __str__(self):
-        return self.nombre_Producto+" - $" + self.precio_Producto.__str__()
+        return self.nombre_Producto.__str__()
 
 
 class OrdendeProduccion(models.Model):
@@ -148,9 +148,9 @@ class OrdendeProduccion(models.Model):
     nombre_cliente = models.CharField("Nombre",max_length=50,null=False, blank=False)
     apellido_cliente = models.CharField("Apellido", max_length=50,null=False, blank=False)
     fecha_Actual = models.DateField("Fecha de Compra", null=False, blank=False,help_text="Consejo: <em>Presione en el calendario</em>.",)
-    producto_Orden = models.ForeignKey(Producto, verbose_name="Lista de Productos", on_delete=models.PROTECT, null=False, blank=False)
+    producto_Orden = models.ForeignKey(Producto, verbose_name="Lista de Servicios", on_delete=models.PROTECT, null=False, blank=False)
+    precio_MateriaPrima = models.FloatField("Precio de materia prima", null=False, blank=False)
     numero_Pedido = models.IntegerField("N° de Pedido ", null=True, blank=False)
-    cantidad_Producto = models.IntegerField("Cantidad de Producto", null=True, blank=False)
     detalles_Pedido = models.CharField("Observaciones",max_length=50,null=False, blank=False)
 
 
@@ -159,7 +159,7 @@ class OrdendeProduccion(models.Model):
         ordering = ["id_OrdendeProduccion"]
 
     def __str__(self):
-        return self.id_OrdendeProduccion.__str__() + " - " + self.fecha_Actual.__format__('%d/%m/%Y').__str__() + self.cantidad_Producto.__str__() + " - " + self.numero_Pedido.__str__() + " - "
+        return self.id_OrdendeProduccion.__str__() + " - " + self.fecha_Actual.__format__('%d/%m/%Y').__str__() + " - " +self.precio_MateriaPrima.__str__()+ " - " + self.numero_Pedido.__str__() + " - "
 
 class ManodeObra(models.Model):
     id_manodeObra=models.AutoField(primary_key=True, null=False, blank=False)
@@ -179,7 +179,6 @@ class ManodeObra(models.Model):
 class Prorrateo(models.Model):
     id_Prorrateo=models.AutoField(primary_key=True, null=False, blank=False)
     manodeObraIndirecta = models.IntegerField("Mano de Obra Indirecta", null=False, blank=False, validators=[MinValueValidator(0)])
-    alquiler = models.FloatField("Alquiler del local", null=False, blank=False, validators=[MinValueValidator(0)])
     segurosEquipo = models.FloatField("Seguro y Equipo", null=False, blank=False, validators=[MinValueValidator(0)])
     depreciacion = models.FloatField("Depreciacion", null=False, blank=False, validators=[MinValueValidator(0)])
     energia = models.FloatField("Energia Electrica", null=False, blank=False, validators=[MinValueValidator(0)])
@@ -197,8 +196,7 @@ class Prorrateo(models.Model):
 
     def __str__(self):
         return " - $" + self.manodeObraIndirecta.__str__()+\
-               " - $" + self.alquiler.__str__()+" - $"\
-               +self.segurosEquipo.__str__()+" - $"+\
+              " - $" +self.segurosEquipo.__str__()+" - $"+\
                self.depreciacion.__str__()+" - $"+\
                self.energia.__str__()+" - $"+\
                self.amortizacion.__str__()+" - $"\
