@@ -12,8 +12,8 @@
 
     <div class="row">
         <div class="col-sm">
-            <div class="card text-white bg-dark text-center" style="max-width: 20rem;">
-                <div class="card-header">
+            <div class="card text-dark bg-white text-center" style="max-width: 20rem;">
+                <div class="card-header text-white bg-dark">
                     <h5 class="card-title">1. Balance de comprobacion</h5>
                 </div>
                 <div class="card-body">
@@ -23,7 +23,7 @@
                     </p>
                     <br>
                     <p class="lead">
-                        <a class="btn btn-light btn-lg" href="{% url 'balanceComprobacion' %}" role="button">Empezar</a>
+                        <a class="btn btn-success btn-lg" href="{% url 'balanceComprobacion' %}" role="button">Empezar</a>
                     </p>
                 </div>
             </div>
@@ -31,7 +31,7 @@
 
         <div class="col-sm">
             <div class="card text-dark bg-white  text-center" style="max-width: 20rem;">
-                <div class="card-header">
+                <div class="card-header text-white bg-dark">
                     <h5 class="card-title">2. Ajustes</h5>
                 </div>
                 <div class="card-body">
@@ -41,15 +41,15 @@
                     </p>
                     <br>
                     <p class="lead">
-                        <a class="btn btn-dark btn-lg" href="{% url 'ajustes' %}" role="button">Empezar</a>
+                        <a class="btn btn-success btn-lg" href="{% url 'ajustes' %}" role="button">Empezar</a>
                     </p>
                 </div>
             </div>
         </div>
 
         <div class="col-sm">
-            <div class="card text-white bg-dark text-center" style="max-width: 20rem;">
-                <div class="card-header">
+            <div class="card text-dark bg-white text-center" style="max-width: 20rem;">
+                <div class="card-header text-white bg-dark">
                     <h5 class="card-title">3. Balance de comprobacion ajustado</h5>
                 </div>
                 <div class="card-body">
@@ -58,7 +58,7 @@
                     </p>
                     <br>
                     <p class="lead">
-                        <a class="btn btn-light btn-lg" href="{% url 'balanceComprobacionAjustado' %}" role="button">Empezar</a>
+                        <a class="btn btn-success btn-lg" href="{% url 'balanceComprobacionAjustado' %}" role="button">Empezar</a>
                     </p>
                 </div>
             </div>
@@ -68,7 +68,7 @@
     <div class="row">
         <div class="col-sm">
             <div class="card text-dark bg-white  text-center" style="max-width: 20rem;">
-                <div class="card-header">
+                <div class="card-header text-white bg-dark">
                     <h5 class="card-title">4. Estado de resultado</h5>
                 </div>
                 <div class="card-body">
@@ -78,15 +78,15 @@
                     </p>
                     <br>
                     <p class="lead">
-                        <a class="btn btn-dark btn-lg" href="{% url 'estadoResultado' %}" role="button">Empezar</a>
+                        <a class="btn btn-success btn-lg" href="{% url 'estadoResultado' %}" role="button">Empezar</a>
                     </p>
                 </div>
             </div>
         </div>
 
         <div class="col-sm">
-            <div class="card text-white bg-dark text-center" style="max-width: 20rem;">
-                <div class="card-header">
+            <div class="card text-dark bg-white text-center" style="max-width: 20rem;">
+                <div class="card-header text-white bg-dark">
                     <h5 class="card-title">5. Estado de capital</h5>
                 </div>
                 <div class="card-body">
@@ -96,7 +96,7 @@
                     </p>
                     <br>
                     <p class="lead">
-                        <a class="btn btn-light btn-lg" href="{% url 'estadoCapital' %}" role="button">Empezar</a>
+                        <a class="btn btn-success btn-lg" href="{% url 'estadoCapital' %}" role="button">Empezar</a>
                     </p>
                 </div>
             </div>
@@ -104,7 +104,7 @@
 
         <div class="col-sm">
             <div class="card text-dark bg-white  text-center" style="max-width: 20rem;">
-                <div class="card-header">
+                <div class="card-header text-white bg-dark">
                     <h5 class="card-title">6. Balance general</h5>
                 </div>
                 <div class="card-body">
@@ -114,7 +114,7 @@
                     </p>
                     <br>
                     <p class="lead">
-                        <a class="btn btn-dark btn-lg" href="{% url 'balanceGeneral' %}" role="button">Empezar</a>
+                        <a class="btn btn-success btn-lg" href="{% url 'balanceGeneral' %}" role="button">Empezar</a>
                     </p>
                 </div>
             </div>
@@ -122,4 +122,10 @@
     </div>
 </div>
     </div>
+
+    <style>
+        body {
+            background-color: rgb(151, 151, 151); /* Cambia el color de fondo de toda la página */
+        }
+    </style>
 {%endblock %}
