@@ -77,14 +77,14 @@ class SubCuenta(models.Model):
 
 
 class TipoTransaccion(models.Model):
-    id_tipoTransaccion = models.AutoField(primary_key=True)
-    nombre_tipoTransaccion = models.CharField(max_length=20, null=False, blank=False)
+    id_tipoTransaccion = models.AutoField("Codigo de Transaccion",primary_key=True)
+    nombre_tipoTransaccion = models.CharField("Nombre de Transaccion",max_length=20, null=False, blank=False)
 
     class Meta:
         db_table = 'TipoTransaccion'
 
     def __str__(self):
-        return self.nombre_tipoTransaccion
+        return self.nombre_tipoTransaccion.__str__()
 
 
 class Partida(models.Model):

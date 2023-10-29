@@ -12,6 +12,16 @@ from django.db.models import Q
 #------------------------------------------------------------------------------------#
 #VISTAS PARA AGREAR EL CATALOGO
 @login_required
+def agg_tipotrans(request):
+    formulario = tipotransaccionForm(request.POST or None)
+    
+    if formulario.is_valid():
+        transaccion= formulario.save()  
+       # return redirect('transacciones', id_partida)
+
+    return render(request, 'catalogo/tipotrans.html', {'formulario': formulario})
+
+@login_required
 def agg_clase(request):
     formulario = ClasecuentaForm(request.POST or None)
     

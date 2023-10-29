@@ -5,7 +5,16 @@ from django.utils.translation import gettext_lazy as _
 from .models import *
 from smart_selects.form_fields import ChainedModelChoiceField
 
-
+class tipotransaccionForm(forms.ModelForm):
+    class Meta:
+        model = TipoTransaccion
+        fields = '__all__'
+        exclude = []
+        widgets = {
+            'id_tipoTransaccion': forms.TextInput(attrs={'class': 'form-control'}),
+            'nombre_tipoTransaccion': forms.TextInput(attrs={'class': 'form-control'}),
+            
+        }
 
 class ClasecuentaForm(forms.ModelForm):
     class Meta:

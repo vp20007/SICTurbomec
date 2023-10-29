@@ -20,6 +20,7 @@ urlpatterns = [
     path('catalogo/grupo', agg_grupo, name='agg_grupo'),
     path('catalogo/cuenta', agg_cuenta, name='agg_cuenta'),
     path('catalogo/subcuenta', agg_subcuenta, name='agg_subcuenta'),
+    path('catalogo/tipotrans', agg_tipotrans, name='agg_tipotrans'),
     path('libros', libros, name='libros'),
     
 
