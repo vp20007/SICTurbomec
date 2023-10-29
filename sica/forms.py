@@ -6,6 +6,51 @@ from .models import *
 from smart_selects.form_fields import ChainedModelChoiceField
 
 
+
+class ClasecuentaForm(forms.ModelForm):
+    class Meta:
+        model = Clase
+        fields = '__all__'
+        exclude = []
+        widgets = {
+            'id_clase': forms.TextInput(attrs={'class': 'form-control'}),
+            'nombre_clase': forms.TextInput(attrs={'class': 'form-control'}),
+            
+        }
+
+class GrupocuentaForm(forms.ModelForm):
+    class Meta:
+        model = Grupo
+        fields = '__all__'
+        exclude = []
+        widgets = {
+            'id_grupo': forms.TextInput(attrs={'class': 'form-control'}),
+            'nombre_grupo': forms.TextInput(attrs={'class': 'form-control'}),
+            'id_clase': forms.TextInput(attrs={'class': 'form-control'}),  
+        }
+
+class CuentaForm(forms.ModelForm):
+    class Meta:
+        model = Cuenta
+        fields = '__all__'
+        exclude = []
+        widgets = {
+            'id_cuenta': forms.TextInput(attrs={'class': 'form-control'}),
+            'nombre_cuenta': forms.TextInput(attrs={'class': 'form-control'}),
+            'id_grupo': forms.TextInput(attrs={'class': 'form-control'}),  
+        }
+
+class SubcuentaForm(forms.ModelForm):
+    class Meta:
+        model = SubCuenta
+        fields = '__all__'
+        exclude = ['debe','haber']
+        widgets = {
+            'id_subCuenta': forms.TextInput(attrs={'class': 'form-control'}),
+            'nombre_subCuenta': forms.TextInput(attrs={'class': 'form-control'}),
+            'id_cuenta': forms.TextInput(attrs={'class': 'form-control'}),  
+        }
+
 class DateInput(forms.DateInput):
     input_type = 'date'
 

@@ -16,7 +16,12 @@ urlpatternsTransaccion = [
 urlpatterns = [
     path('', inicio, name='inicio'),
     path('catalogo', catalogo, name='catalogo'),
+    path('catalogo/clase', agg_clase, name='agg_clase'),
+    path('catalogo/grupo', agg_grupo, name='agg_grupo'),
+    path('catalogo/cuenta', agg_cuenta, name='agg_cuenta'),
+    path('catalogo/subcuenta', agg_subcuenta, name='agg_subcuenta'),
     path('libros', libros, name='libros'),
+    
 
     path('mayor', mayor, name='mayor'),
     path('movimientos/<str:id_subCuenta>', movimientos, name='movimientos'),

@@ -24,20 +24,20 @@ def validar_fecha(fecha_transaccion):
 
 
 class Clase(models.Model):
-    id_clase = models.CharField(primary_key=True, max_length=1)
-    nombre_clase = models.CharField(max_length=50, null=False, blank=False)
+    id_clase = models.CharField("Codigo de clase", primary_key=True, max_length=1)
+    nombre_clase = models.CharField("Nombre de la clase",max_length=50, null=False, blank=False)
 
     class Meta:
         db_table = 'clase'
         ordering = ["id_clase"]
 
     def __str__(self):
-        return self.id_clase + " - " + self.nombre_clase
+        return self.id_clase.__str__() + " - " + self.nombre_clase.__str__()
 
 
 class Grupo(models.Model):
-    id_grupo = models.CharField(primary_key=True, max_length=2, null=False, blank=False)
-    nombre_grupo = models.CharField(max_length=50, null=False, blank=False)
+    id_grupo = models.CharField("Codigo de grupo",primary_key=True, max_length=2, null=False, blank=False)
+    nombre_grupo = models.CharField("Nombre de grupo",max_length=50, null=False, blank=False)
     id_clase = models.ForeignKey(Clase, verbose_name="Clase", on_delete=models.PROTECT, null=False, blank=False)
 
     class Meta:
@@ -45,12 +45,12 @@ class Grupo(models.Model):
         ordering = ["id_grupo"]
 
     def __str__(self):
-        return self.id_grupo + " - " + self.nombre_grupo
+        return self.id_grupo.__str__() + " - " + self.nombre_grupo.__str__()
 
 
 class Cuenta(models.Model):
-    id_cuenta = models.CharField(primary_key=True, max_length=4, null=False, blank=False)
-    nombre_cuenta = models.CharField(max_length=50, null=False, blank=False)
+    id_cuenta = models.CharField("Codigo de cuenta",primary_key=True, max_length=4, null=False, blank=False)
+    nombre_cuenta = models.CharField("Nombre de cuenta",max_length=50, null=False, blank=False)
     id_grupo = models.ForeignKey(Grupo, verbose_name="Grupo", on_delete=models.PROTECT, null=False, blank=False)
 
     class Meta:
@@ -58,12 +58,12 @@ class Cuenta(models.Model):
         ordering = ["id_cuenta"]
 
     def __str__(self):
-        return self.id_cuenta + " - " + self.nombre_cuenta
+        return self.id_cuenta.__str__() + " - " + self.nombre_cuenta.__str__()
 
 
 class SubCuenta(models.Model):
-    id_subCuenta = models.CharField(primary_key=True, max_length=7, null=False, blank=False)
-    nombre_subCuenta = models.CharField(max_length=50, null=False, blank=False)
+    id_subCuenta = models.CharField("Codigo de Subcuenta",primary_key=True, max_length=7, null=False, blank=False)
+    nombre_subCuenta = models.CharField("Nombre de Subcuenta",max_length=50, null=False, blank=False)
     debe = models.FloatField(null=True, blank=True, validators=[MinValueValidator(0)])
     haber = models.FloatField(null=True, blank=True, validators=[MinValueValidator(0)])
     id_cuenta = models.ForeignKey(Cuenta, verbose_name="Cuenta", on_delete=models.PROTECT, null=False, blank=False)
@@ -73,7 +73,7 @@ class SubCuenta(models.Model):
         ordering = ["id_subCuenta"]
 
     def __str__(self):
-        return self.id_subCuenta + " - " + self.nombre_subCuenta
+        return self.id_subCuenta.__str__() + " - " + self.nombre_subCuenta.__str__()
 
 
 class TipoTransaccion(models.Model):

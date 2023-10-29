@@ -9,6 +9,50 @@ from django.db.models import Q
 
 # Create your views here.
 
+#------------------------------------------------------------------------------------#
+#VISTAS PARA AGREAR EL CATALOGO
+@login_required
+def agg_clase(request):
+    formulario = ClasecuentaForm(request.POST or None)
+    
+    if formulario.is_valid():
+        clase = formulario.save()  
+       # return redirect('transacciones', id_partida)
+
+    return render(request, 'catalogo/clase.html', {'formulario': formulario})
+
+@login_required
+def agg_grupo(request):
+    formulario = GrupocuentaForm(request.POST or None)
+    
+    if formulario.is_valid():
+        grupo = formulario.save()  
+       # return redirect('transacciones', id_partida)
+
+    return render(request, 'catalogo/grupo.html', {'formulario': formulario})
+
+@login_required
+def agg_cuenta(request):
+    formulario = CuentaForm(request.POST or None)
+    
+    if formulario.is_valid():
+        cuenta = formulario.save()  
+       # return redirect('transacciones', id_partida)
+
+    return render(request, 'catalogo/cuenta.html', {'formulario': formulario})
+
+@login_required
+def agg_subcuenta(request):
+    formulario = SubcuentaForm(request.POST or None)
+    
+
+    if formulario.is_valid():
+        subcuenta = formulario.save()  
+       # return redirect('transacciones', id_partida)
+
+    return render(request, 'catalogo/subcuenta.html', {'formulario': formulario})
+#---------------------------------------------------------------------------------
+
 @login_required
 def inicio(request):
     return render(request, 'paginas/inicio.html')
