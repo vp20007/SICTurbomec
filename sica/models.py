@@ -84,7 +84,7 @@ class TipoTransaccion(models.Model):
         db_table = 'TipoTransaccion'
 
     def __str__(self):
-        return self.nombre_tipoTransaccion.__str__()
+        return self.id_tipoTransaccion.__str__() + " - " + self.nombre_tipoTransaccion.__str__()
 
 
 class Partida(models.Model):
