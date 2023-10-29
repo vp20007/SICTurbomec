@@ -99,8 +99,8 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Feel free to alter this value to suit your needs.
-        #default='postgresql://postgres:admin@localhost:5432/SICA',
-        default='postgres://postgresql_w45f_user:NTDMV1fkefMpUXpEy0BpS5T7fBN2MVJN@dpg-ckth9fmnfb1c73d2m2tg-a/postgresql_w45f',
+        default='postgresql://postgres:admin@localhost:5432/SICA',
+        #default='postgres://postgresql_w45f_user:NTDMV1fkefMpUXpEy0BpS5T7fBN2MVJN@dpg-ckth9fmnfb1c73d2m2tg-a/postgresql_w45f',
         conn_max_age=600
          
     )

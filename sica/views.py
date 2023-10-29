@@ -293,7 +293,7 @@ def calculo_IVA(request, id_partida, id_transaccion):
 
     # se definen algunos valores del formulario
     formulario.initial['fecha_transaccionT'] = fechaFormato.__str__()
-    formulario.fields['subCuenta_id'].queryset = SubCuenta.objects.filter(Q(id_subCuenta="1106.01") | Q(id_subCuenta="2105.01"))
+    formulario.fields['subCuenta_id'].queryset = SubCuenta.objects.filter(Q(id_subCuenta="1105.01") | Q(id_subCuenta="2105.01"))
 
     if formulario.is_valid() and request.POST:
         # asignamos el objeto subCuenta de la transaccion a una variable
