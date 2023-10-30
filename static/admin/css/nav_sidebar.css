@@ -28,7 +28,7 @@
 
 .toggle-nav-sidebar:hover,
 .toggle-nav-sidebar:focus {
-    background-color: var(--darkened-bg);
+    background-color: rgb(241, 129, 55);
 }
 
 #nav-sidebar {
@@ -38,7 +38,7 @@
     margin-left: -276px;
     border-top: 1px solid transparent;
     border-right: 1px solid var(--hairline-color);
-    background-color: var(--body-bg);
+    background-color: var(--darkened-bg);
     overflow: auto;
 }
 
@@ -122,7 +122,7 @@
     padding: 2px 5px;
     margin: 5px 0;
     border: 1px solid var(--border-color);
-    background-color: var(--darkened-bg);
+    background-color:var(--darkened-bg);
     color: var(--body-fg);
 }
 

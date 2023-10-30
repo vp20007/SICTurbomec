@@ -6,27 +6,27 @@
 
 {% load crispy_forms_tags %}
 
-<div class="jumbotron text-center">
+<div class="jumbotron text-center" style="background-color: #08728737!important;">
 	<h1 class="display-3">TURBOMEC </h1>
 	<hr class="my-2">
 	<br>
-
-	<div class="container-fluid">
+	<div class="container-fluid" >
 		<div class="row align-items-center justify-content-center">
 			<div class="col-5 col-md-5 ">
 				<div class="card text-dark bg-light mb-2 text-center" style="max-width: 30rem;">
-					<div class="card-header text-white bg-dark">
+					<div class="card-header text-white bg-dark" style="background-color: #087287!important;">
 						<h5 class="card-title">Iniciar Sesión </h5>
 					</div>
-					<div class="card-body">
-						<form method="post">
+					<div class="card-body" style="background-color: #087287!important;">
+						<form method="post" style="color: #ffffff!important;">
 							{% csrf_token %}
 							<div class="mb-3" >
 								<style>.asteriskField { display: none; }</style>
 								{{ formulario|crispy }}
 							</div>
 							<br>
-							<input class="btn btn-primary" type="submit" value="Ingresar">
+							<input class="btn btn-primary" type="submit" style="background-color: #05171b!important;" value="Ingresar">
+							
 						</form>
 					</div>
 				</div>
