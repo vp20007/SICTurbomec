@@ -12,6 +12,17 @@ class tipotransaccionForm(forms.ModelForm):
         exclude = []
         widgets = {
             'id_tipoTransaccion': forms.TextInput(attrs={'class': 'form-control'}),
+            'nombre_Producto': forms.TextInput(attrs={'class': 'form-control'}),
+            
+        }
+
+class servicioForm(forms.ModelForm):
+    class Meta:
+        model = Producto
+        fields = '__all__'
+        exclude = []
+        widgets = {
+            'id_Producto': forms.TextInput(attrs={'class': 'form-control'}),
             'nombre_tipoTransaccion': forms.TextInput(attrs={'class': 'form-control'}),
             
         }

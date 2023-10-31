@@ -22,6 +22,16 @@ def agg_tipotrans(request):
     return render(request, 'catalogo/tipotrans.html', {'formulario': formulario})
 
 @login_required
+def agg_servicio(request):
+    formulario = servicioForm(request.POST or None)
+    
+    if formulario.is_valid():
+        servicio= formulario.save()  
+       # return redirect('transacciones', id_partida)
+
+    return render(request, 'catalogo/servicios.html', {'formulario': formulario})
+
+@login_required
 def agg_clase(request):
     formulario = ClasecuentaForm(request.POST or None)
     

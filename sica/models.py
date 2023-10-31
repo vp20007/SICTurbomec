@@ -132,7 +132,7 @@ class Transaccion(models.Model):
             '%d/%m/%Y').__str__() + " - " + self.id_subCuenta.id_subCuenta + " - " + self.id_subCuenta.nombre_subCuenta + " - " + self.id_tipoTransaccion.nombre_tipoTransaccion + " - $" + self.monto.__str__()
 
 class Producto(models.Model):
-    id_Producto = models.AutoField(primary_key=True, null=False, blank=False)
+    id_Producto = models.AutoField("Codigo de servicio", primary_key=True, null=False, blank=False)
     nombre_Producto = models.CharField("Nombre",max_length=50, null=False, blank=False)
     precio_Producto = models.FloatField("Precio", null=True, blank=True)
 
@@ -141,7 +141,7 @@ class Producto(models.Model):
         ordering = ["id_Producto"]
 
     def __str__(self):
-        return self.nombre_Producto.__str__()
+        return self.nombre_Producto.__str__()+ " - " + self.id_Producto.__str__()
 
 
 class OrdendeProduccion(models.Model):
