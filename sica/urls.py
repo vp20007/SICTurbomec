@@ -57,4 +57,5 @@ urlpatterns = [
     path('ContabilidadCostos/CostosIndirectos.html/<int:id_OrdendeProduccion>/<int:id_Prorrateo>', CostosIndirectosView, name='CostosIndirectos'),
     path('ContabilidadCostos/verCostosIndirectos.html/<int:id_OrdendeProduccion>', verCostosIndirectos, name='verCostosIndirectos'),
     path('ContabilidadCostos/verFactura.html/<int:id_OrdendeProduccion>', verFactura, name='verFactura'),
+    path('ContabilidadCostos/eliminar/<int:id_OrdendeProduccion>', eliminar_orden, name='eliminar_orden'),
 ]

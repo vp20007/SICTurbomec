@@ -9,6 +9,24 @@ from django.db.models import Q
 
 # Create your views here.
 
+
+
+@login_required
+def eliminar_orden(request, id_OrdendeProduccion):
+    orden = OrdendeProduccion.objects.get(id_OrdendeProduccion=id_OrdendeProduccion)
+    manoObra=ManodeObra.objects.get(id_OrdendeProduccion=id_OrdendeProduccion)
+    prorra=Prorrateo.objects.get(id_OrdendeProduccion=id_OrdendeProduccion)
+    costosin=CostosIndirectos.objects.get(id_OrdendeProduccion=id_OrdendeProduccion)
+    temp = orden.id_OrdendeProduccion.__str__()
+    costosin.delete()
+    prorra.delete()
+    manoObra.delete()
+    orden.delete()
+    messages.success(request, "Se ha eliminado la orden se servicio N°: " + temp)
+
+    return redirect('ContabilidadCostos')
+
+
 #------------------------------------------------------------------------------------#
 #VISTAS PARA AGREAR EL CATALOGO
 @login_required

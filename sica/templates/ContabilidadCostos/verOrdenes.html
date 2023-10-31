@@ -4,6 +4,26 @@
 
 {% block js %}
 
+
+    <script>
+        function eliminarOrden(id_OrdendeProduccion) {
+            Swal.fire({
+                "title": "Estas seguro?",
+                "text": "Esta accion no se puede deshacer",
+                "icon": "question",
+                "showCancelButton": true,
+                "cancelButtonText": "No, Cancelar",
+                "confirmButtonText": "Si, Eliminar",
+                "confirmButtonColor": "#dc3545"
+            })
+            .then(function(result) {
+                if(result.isConfirmed) {
+                    window.location.href = "{% url 'ContabilidadCostos' %}/eliminar/"+id_OrdendeProduccion
+                }
+            })
+        }
+    </script>
+
 {% endblock %}
 
 {% block contenido %}
@@ -31,6 +51,7 @@
                         <th></th>
                         <th></th>
                         <th></th>
+                        <th></th>
 
 
                     </tr>
@@ -49,15 +70,19 @@
                             <td>
                                 <a class="btn btn-info btn-sm" href="{% url 'verManodeObra' OrdendeProduccion.id_OrdendeProduccion  %}" role="button">Mano de Obra</a>
                             </td>
-                             <td>
+                            <td>
                                 <a class="btn btn-info btn-sm" href="{% url 'verProrrateo' OrdendeProduccion.id_OrdendeProduccion  %}" role="button">Ver Prorrateo</a>
                             </td>
                             <td>
                                 <a class="btn btn-info btn-sm" href="{% url 'verCostosIndirectos' OrdendeProduccion.id_OrdendeProduccion %}" role="button">Costos Indirectos</a>
                             </td>
-                             <td>
+                            <td>
                                 <a class="btn btn-info btn-sm" href="{% url 'verFactura' OrdendeProduccion.id_OrdendeProduccion %}" role="button">Ver Factura</a>
                             </td>
+                            <td>
+                                <a href="#" onclick="eliminarOrden({{ OrdendeProduccion.id_OrdendeProduccion}})" class="btn btn-danger" role="button">Borrar</a>
+                            </td>
+                            
                         </tr>
                     {% endfor %}
 
