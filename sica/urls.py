@@ -21,6 +21,7 @@ urlpatterns = [
     path('catalogo/cuenta', agg_cuenta, name='agg_cuenta'),
     path('catalogo/subcuenta', agg_subcuenta, name='agg_subcuenta'),
     path('catalogo/tipotrans', agg_tipotrans, name='agg_tipotrans'),
+    path('catalogo/tipoeditar/<int:id_tipoTransaccion>', editar_Trans, name='editar_Trans'),
     path('catalogo/servicios', agg_servicio, name='agg_servicio'),
     path('libros', libros, name='libros'),
     

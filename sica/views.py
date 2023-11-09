@@ -9,7 +9,17 @@ from django.db.models import Q
 
 # Create your views here.
 
+@login_required
+def editar_Trans(request, id_tipoTransaccion):
+    tipo = TipoTransaccion.objects.get(id_tipoTransaccion=id_tipoTransaccion)
+    formulario = tipotransaccionForm(request.POST or None, instance=tipo)
 
+    if formulario.is_valid() and request.POST:
+        formulario.save()
+
+        messages.success(request, "¡Se edito exitosamente!")
+
+    return render(request, 'catalogo/tipoeditar.html', {'formulario': formulario})
 
 @login_required
 def eliminar_orden(request, id_OrdendeProduccion):
