@@ -730,9 +730,9 @@ def balanceGeneral(request):
     subCuentaUtilidad.haber = subCuentaUtilidad.debe = 0
 
     if suma_debe < suma_haber:
-        subCuentaUtilidad.haber = utilidad * 0.6
+        subCuentaUtilidad.haber = utilidad * 0.4
     else:
-        subCuentaUtilidad.debe = utilidad * 0.6
+        subCuentaUtilidad.debe = utilidad * 0.4
 
     subCuentaUtilidad.save()
 
@@ -757,6 +757,7 @@ def balanceGeneral(request):
     else:
         subCuentaCapital.debe = capital
 
+    
     subCuentaCapital.save()
 
     utilidad2 = abs(suma_debe - suma_haber)
@@ -766,9 +767,9 @@ def balanceGeneral(request):
     subCuentaUtilidad2.haber = subCuentaUtilidad2.debe = 0
 
     if suma_debe < suma_haber:
-        subCuentaUtilidad2.haber = utilidad2 * 0.4
+        subCuentaUtilidad2.haber = utilidad2 * 0.6
     else:
-        subCuentaUtilidad2.debe = utilidad2 * 0.4
+        subCuentaUtilidad2.debe = utilidad2 * 0.6
 
     subCuentaUtilidad2.save()
 
