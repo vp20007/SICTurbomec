@@ -639,9 +639,9 @@ def estadoCapital(request):
     subCuentaUtilidad.haber = subCuentaUtilidad.debe = 0
 
     if suma_debe < suma_haber:
-        subCuentaUtilidad.haber = utilidad * 0.6
+        subCuentaUtilidad.haber = utilidad * 0.4
     else:
-        subCuentaUtilidad.debe = utilidad * 0.6
+        subCuentaUtilidad.debe = utilidad * 0.4
 
     subCuentaUtilidad.save()
 
