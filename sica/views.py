@@ -639,9 +639,9 @@ def estadoCapital(request):
     subCuentaUtilidad.haber = subCuentaUtilidad.debe = 0
 
     if suma_debe < suma_haber:
-        subCuentaUtilidad.haber = utilidad * 0.4
+        subCuentaUtilidad.haber = utilidad * 0.6
     else:
-        subCuentaUtilidad.debe = utilidad * 0.4
+        subCuentaUtilidad.debe = utilidad * 0.6
 
     subCuentaUtilidad.save()
 
@@ -730,9 +730,9 @@ def balanceGeneral(request):
     subCuentaUtilidad.haber = subCuentaUtilidad.debe = 0
 
     if suma_debe < suma_haber:
-        subCuentaUtilidad.haber = utilidad * 0.4
+        subCuentaUtilidad.haber = utilidad * 0.6
     else:
-        subCuentaUtilidad.debe = utilidad * 0.4
+        subCuentaUtilidad.debe = utilidad * 0.6
 
     subCuentaUtilidad.save()
 
@@ -767,9 +767,9 @@ def balanceGeneral(request):
     subCuentaUtilidad2.haber = subCuentaUtilidad2.debe = 0
 
     if suma_debe < suma_haber:
-        subCuentaUtilidad2.haber = utilidad2 * 0.6
+        subCuentaUtilidad2.haber = utilidad2 * 0.4
     else:
-        subCuentaUtilidad2.debe = utilidad2 * 0.6
+        subCuentaUtilidad2.debe = utilidad2 * 0.4
 
     subCuentaUtilidad2.save()
 
